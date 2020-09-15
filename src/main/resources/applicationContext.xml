@@ -2,8 +2,10 @@
 <beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:yarn="http://www.springframework.org/schema/yarn" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
     http://www.springframework.org/schema/yarn http://www.springframework.org/schema/yarn/spring-yarn.xsd">
 
-    <yarn:configuration>
-        fs.defaultFS=hdfs://localhost:9000
-        hadoop.tmp.dir=/tmp/hadoop
-    </yarn:configuration>
+    <bean>
+        <yarn:configuration>
+            fs.defaultFS=hdfs://localhost:9000
+            hadoop.tmp.dir=/tmp/hadoop
+        </yarn:configuration>
+    </bean>
 </beans>
