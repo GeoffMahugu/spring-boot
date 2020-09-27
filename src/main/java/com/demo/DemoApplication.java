@@ -2,19 +2,24 @@ package com.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.RequestMapping;
+
+import org.apache.hadoop.fs.FileStatus;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.data.hadoop.fs.FsShell;
 
 @SpringBootApplication
-@RestController
-public class DemoApplication {
-	public static void run() {
-	}
+public class DemoApplication implements CommandLineRunner {
 
-	@RequestMapping("/")
-    String home() {
-        return "Hello World!";
-    }
+	@Autowired
+	private FsShell shell;
+
+	@Override
+	public void run(String... args) {
+		for (FileStatus s : shell.lsr("/tmp")) {
+			System.out.println("> " + s.getPath());
+		}
+	}
 
 	public static void main(String[] args) {
 		SpringApplication.run(DemoApplication.class, args);
