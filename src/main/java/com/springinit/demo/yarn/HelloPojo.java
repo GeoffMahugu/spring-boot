@@ -17,15 +17,15 @@ public class HelloPojo {
     @Autowired
     private Configuration configuration;
 
-//    @OnYarnContainerStart
-    @OnContainerStart
+    @OnYarnContainerStart
     public void publicVoidNoArgsMethod() {
-        log.info("Hello from HelloPojo");
-        log.info("About to list from hdfs root content");
-        FsShell shell = new FsShell(configuration);
-        for (FileStatus s : shell.ls(false, "/")) {
-            log.info(s);
-        }
+        return;
+//        log.info("Hello from HelloPojo");
+//        log.info("About to list from hdfs root content");
+//        FsShell shell = new FsShell(configuration);
+//        for (FileStatus s : shell.ls(false, "/")) {
+//            log.info(s);
+//        }
     }
 
 }
