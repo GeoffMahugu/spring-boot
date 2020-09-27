@@ -2,7 +2,7 @@ spring:
   yarn:
     appName: yarn-boot-simple
     applicationDir: /app/demo/
-    fsUri: hdfs://192.168.1.119:8020
+    fsUri: hdfs://192.168.1.119:56230
     rmAddress: 192.168.1.119:32458
     schedulerAddress: 192.168.1.119:50070
     client:
