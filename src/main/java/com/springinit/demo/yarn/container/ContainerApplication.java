@@ -1,4 +1,4 @@
-package com.springinit.demo.yarn;
+package com.springinit.demo.yarn.container;
 import com.springinit.demo.DemoApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.Bean;

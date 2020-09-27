@@ -1,4 +1,4 @@
-package com.springinit.demo.yarn;
+package com.springinit.demo.yarn.container;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
