@@ -13,15 +13,15 @@ public class HelloPojo {
     private static final Log log = LogFactory.getLog(HelloPojo.class);
 
     @Autowired
-//    private Configuration configuration;
+    private Configuration configuration;
 
-//    @OnYarnContainerStart
-//    public void publicVoidNoArgsMethod() {
-//        log.info("Hello from HelloPojo");
-//        log.info("About to list from hdfs root content");
-//        FsShell shell = new FsShell(configuration);
-//        for (FileStatus s : shell.ls(false, "/")) {
-//            log.info(s);
-//        }
+    @OnYarnContainerStart
+    public void publicVoidNoArgsMethod() {
+        log.info("Hello from HelloPojo");
+        log.info("About to list from hdfs root content");
+        FsShell shell = new FsShell(configuration);
+        for (FileStatus s : shell.ls(false, "/")) {
+            log.info(s);
+        }
 //    }
 }
