@@ -11,6 +11,10 @@ import org.springframework.data.hadoop.fs.FsShell;
 @SpringBootApplication
 public class DemoApplication implements CommandLineRunner {
 
+	public static void main(String[] args) {
+		SpringApplication.run(DemoApplication.class, args);
+	}
+
 	@Autowired
 	private FsShell shell;
 
@@ -19,9 +23,5 @@ public class DemoApplication implements CommandLineRunner {
 		for (FileStatus s : shell.lsr("/tmp")) {
 			System.out.println("> " + s.getPath());
 		}
-	}
-
-	public static void main(String[] args) {
-		SpringApplication.run(DemoApplication.class, args);
 	}
 }
